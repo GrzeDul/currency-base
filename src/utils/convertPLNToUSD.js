@@ -4,14 +4,14 @@ export const convertPLNToUSD = (PLN) => {
     typeof PLN === 'number' ||
     typeof PLN === 'undefined'
   ) {
-    PLN = parseFloat(PLN, 10);
-    if (isNaN(PLN)) {
+    let floatPLN = parseFloat(PLN, 10);
+    if (isNaN(floatPLN)) {
       return NaN;
     }
-    if (PLN <= 0) {
-      PLN = 0;
+    if (floatPLN <= 0) {
+      floatPLN = 0;
     }
-    const PLNtoUSD = PLN / 3.5;
+    const PLNtoUSD = floatPLN / 3.5;
 
     const formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',
